@@ -76,3 +76,7 @@ main {
 .sound-cards button.selected img {
   filter: brightness(0) invert(1);
 }
+
+.hide {
+  display: none;
+}

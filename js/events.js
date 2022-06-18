@@ -1,5 +1,6 @@
 import {
   buttonPlay,
+  buttonPause,
   buttonStop,
   buttonPlus,
   buttonMinus,
@@ -13,6 +14,14 @@ export function Event({timer,sounds}){
 
   buttonPlay.addEventListener('click', () => {
     timer.countdown();
+    buttonPlay.classList.toggle("hide");
+    buttonPause.classList.toggle("hide");
+  });
+
+  buttonPause.addEventListener('click', () => {
+    timer.pauseTimer();
+    buttonPlay.classList.toggle("hide");
+    buttonPause.classList.toggle("hide");
   });
 
   buttonStop.addEventListener('click', () => {
