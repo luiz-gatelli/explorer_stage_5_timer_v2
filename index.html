@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./style.css">
   <title>FocusTimer 2.0</title>
 </head>
+
 <body>
 
   <main>
@@ -44,19 +45,30 @@
     <div class="sound-cards">
       <button class="forest">
         <img src="./images/forest.svg" alt="forest sound button">
+        <input type="range" name="forestSound" id="forestSound">
       </button>
       <button class="rain">
         <img src="./images/rain.svg" alt="rain sound button">
+        <input type="range" name="rainSound" id="rainSound">
       </button>
       <button class="cafeteria">
         <img src="./images/cafeteria.svg" alt="cafeteria sound button">
+        <input type="range" name="cafeteriaSound" id="cafeteriaSound">
       </button>
       <button class="fireplace">
         <img src="./images/fireplace.svg" alt="fireplace.svg sound button">
+        <input type="range" name="fireplaceSound" id="fireplaceSound">
       </button>
     </div>
 
   </main>
+
+  <button class="switch-light">
+    <img src="./images/sun.svg" alt="sun icon">
+  </button>
+  <button class="switch-dark hide">
+    <img src="./images/moon.svg" alt="moon icon">
+  </button>
 
   <script src="./js/index.js" type="module"></script>
 </body>

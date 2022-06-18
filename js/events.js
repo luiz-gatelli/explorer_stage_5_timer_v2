@@ -8,7 +8,11 @@ import {
   buttonRain,
   buttonCafeteria,
   buttonFireplace,
+  buttonLightMode,
+  buttonDarkMode
 } from './elements.js';
+
+import { toggleDarkMode } from './dark-mode.js';
 
 export function Event({timer,sounds}){
 
@@ -54,6 +58,18 @@ export function Event({timer,sounds}){
   buttonFireplace.addEventListener('click', () => {
     buttonFireplace.classList.toggle("selected");
     sounds.playFireplaceSound();
+  });
+
+  buttonLightMode.addEventListener('click', () => { 
+    toggleDarkMode();
+    buttonLightMode.classList.toggle("hide");
+    buttonDarkMode.classList.toggle("hide");
+  });
+
+  buttonDarkMode.addEventListener('click', () => {
+    toggleDarkMode();
+    buttonLightMode.classList.toggle("hide");
+    buttonDarkMode.classList.toggle("hide");
   });
 
 };

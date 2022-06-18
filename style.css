@@ -21,15 +21,32 @@ button {
 main {
   display: flex;
   gap: 19.2rem;
-
-  min-width: 82rem;
-  margin: auto;
-
-  height: 100vh;
-
   justify-content: center;
   align-items: center;
+  min-width: 82rem;
+  margin: auto;
   padding: 19rem 22rem;
+
+  height: 100vh;
+}
+
+input {
+  appearance: none;
+  height: 4px;
+  border-radius: 5px;
+  width: 9rem;
+  outline: none;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary-color);
 }
 
 .timer-container {
@@ -66,6 +83,11 @@ main {
   width: 13.8rem;
   border-radius: 2.4rem;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
   background-color: var(--card-bg-color);
 }
 
@@ -77,6 +99,53 @@ main {
   filter: brightness(0) invert(1);
 }
 
+.switch-light, .switch-dark {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+.sound-cards .selected input {
+  background: white;
+}
+
+.sound-cards .selected input::-webkit-slider-thumb {
+  background: white;
+}
+
 .hide {
   display: none;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: white;
+}
+
+.buttons-container.dark-mode button {
+  filter: invert(76%) sepia(56%) saturate(26%) hue-rotate(202deg) brightness(94%) contrast(88%);
+}
+
+.sound-cards.dark-mode button {
+  background-color: #29292E;
+}
+
+.sound-cards.dark-mode button img {
+  filter: invert(76%) sepia(56%) saturate(26%) hue-rotate(202deg) brightness(94%) contrast(88%);
+}
+
+.sound-cards.dark-mode input {
+  background: white;
+}
+
+.sound-cards.dark-mode input::-webkit-slider-thumb {
+  background: white;
+}
+
+.switch-dark { 
+  filter: brightness(0) invert(1);
+}
+
+.sound-cards.dark-mode button.selected {
+  background-color: #0A3442;
 }
