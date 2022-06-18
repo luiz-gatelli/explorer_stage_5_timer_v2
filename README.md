@@ -6,7 +6,8 @@ This is a follow-up challenge to the previous FocusTimer V2, in which we had to 
 
 ## Additional Functionalities
 
-![Features Example](https://i.imgur.com/oKI6Xyy.gif)
+![Features Example](https://i.imgur.com/vYQXfZS.gif)
 
 - Ability to toggle the dark mode on/off;
 - Ability to control the volume of each bg sound via a slider control;
+- Pause button added;

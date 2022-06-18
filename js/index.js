@@ -4,7 +4,7 @@ import {
 } from './elements.js';
 
 import { Timer } from './timer.js';
-import { Event } from './events.js';
+import { Events } from './events.js';
 import { Sounds } from './sounds.js';
 
 const timer = Timer({
@@ -14,4 +14,4 @@ const timer = Timer({
 
 const sounds = Sounds();
 
-Event({timer,sounds});
+Events({timer,sounds});

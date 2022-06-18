@@ -33,12 +33,32 @@ export function Sounds(){
     fireplace.paused ? fireplace.play() : fireplace.pause();
   }
 
+  function setForestVolume(volume){
+    forest.volume = volume;
+  }
+
+  function setRainVolume(volume){
+    rain.volume = volume;
+  }
+
+  function setCafeteriaVolume(volume){
+    cafeteria.volume = volume;
+  }
+
+  function setFireplaceVolume(volume){
+    fireplace.volume = volume;
+  }
+
   return {
     pauseAllSounds,
     playForestSound,
     playRainSound,
     playCafeteriaSound,
-    playFireplaceSound
+    playFireplaceSound,
+    setForestVolume,
+    setRainVolume,
+    setCafeteriaVolume,
+    setFireplaceVolume
   }
 
 };

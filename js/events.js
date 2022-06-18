@@ -9,12 +9,18 @@ import {
   buttonCafeteria,
   buttonFireplace,
   buttonLightMode,
-  buttonDarkMode
+  buttonDarkMode,
+  volumeForest,
+  volumeRain,
+  volumeCafeteria,
+  volumeFireplace
 } from './elements.js';
 
 import { toggleDarkMode } from './dark-mode.js';
 
-export function Event({timer,sounds}){
+export function Events({timer,sounds}){
+
+  var sliderChanged = false;
 
   buttonPlay.addEventListener('click', () => {
     timer.countdown();
@@ -41,23 +47,52 @@ export function Event({timer,sounds}){
   });
 
   buttonForest.addEventListener('click', () => {
+    if (sliderChanged) {
+      sliderChanged = false;
+      return;
+    }
+    
     buttonForest.classList.toggle("selected");
     sounds.playForestSound();
+    volumeForest.value = 0.5;
+    sounds.setForestVolume(volumeForest.value);
   });
 
   buttonRain.addEventListener('click', () => {
+    if(sliderChanged) {
+      sliderChanged = false;
+      return;
+    }
+    
     buttonRain.classList.toggle("selected");
     sounds.playRainSound();
+    volumeRain.value = 0.5;
+    sounds.setRainVolume(volumeRain.value);
   });
 
   buttonCafeteria.addEventListener('click', () => {
+    if (sliderChanged) {
+      sliderChanged = false;
+      return;
+    }
+    
     buttonCafeteria.classList.toggle("selected");
     sounds.playCafeteriaSound();
+    volumeCafeteria.value = 0.5;
+    sounds.setCafeteriaVolume(volumeCafeteria.value);
   });
 
   buttonFireplace.addEventListener('click', () => {
+    
+    if (sliderChanged) {
+      sliderChanged = false;
+      return;
+    }
+    
     buttonFireplace.classList.toggle("selected");
     sounds.playFireplaceSound();
+    volumeFireplace.value = 0.5;
+    sounds.setFireplaceVolume(volumeFireplace.value);
   });
 
   buttonLightMode.addEventListener('click', () => { 
@@ -70,6 +105,26 @@ export function Event({timer,sounds}){
     toggleDarkMode();
     buttonLightMode.classList.toggle("hide");
     buttonDarkMode.classList.toggle("hide");
+  });
+
+  volumeForest.addEventListener('input', () => {
+    sounds.setForestVolume(volumeForest.value);
+    sliderChanged = true;
+  });
+
+  volumeRain.addEventListener('input', () => {
+    sounds.setRainVolume(volumeRain.value);
+    sliderChanged = true;
+  });
+
+  volumeCafeteria.addEventListener('input', () => {
+    sounds.setCafeteriaVolume(volumeCafeteria.value);
+    sliderChanged = true;
+  });
+
+  volumeFireplace.addEventListener('input', () => {
+    sounds.setFireplaceVolume(volumeFireplace.value);
+    sliderChanged = true;
   });
 
 };
